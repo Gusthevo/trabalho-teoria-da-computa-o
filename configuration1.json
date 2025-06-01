@@ -1,0 +1,19 @@
+{
+  "description": "Esse é um arquivo de configuração que simula uma máquina de Turing, é possível configurá-lo de diversas formas.",
+  "version": "1.0",
+  "author": "Gustavo Campelo",
+  "date": "2025-01-06",
+  "K": ["q0", "q1", "q2", "estado_parada"],
+  "Gamma": ["a", "b", "c", "⊔", "⊳"],
+  "branco": "⊔",
+  "s": "q0",
+  "H": ["estado_parada"],
+  "delta": {
+    "(q0,a)": ["q0", "a", "R"],
+    "(q0,b)": ["q1", "b", "R"],
+    "(q1,b)": ["q1", "b", "R"],
+    "(q1,c)": ["q2", "c", "R"],
+    "(q2,c)": ["estado_parada", "c", "R"],
+    "(q2,⊔)": ["estado_parada", "⊔", "R"]  
+  }
+}
