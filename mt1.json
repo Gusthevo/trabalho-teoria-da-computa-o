@@ -1,0 +1,22 @@
+{
+  "description": "Máquina de Turing para a^n b^m (n,m >= 1)",
+  "K": ["q0", "q1", "q2", "q_accept", "q_reject"],
+  "Gamma": ["a", "b", "⊔", "⊳"],
+  "branco": "⊔",
+  "s": "q0",
+  "H": ["q_accept", "q_reject"],
+  "delta": {
+    "(q0,⊳)": ["q0", "⊳", "R"],
+    "(q0,a)": ["q1", "a", "R"],
+    "(q0,b)": ["q_reject", "b", "R"],
+    "(q0,⊔)": ["q_reject", "⊔", "R"],
+    
+    "(q1,a)": ["q1", "a", "R"],
+    "(q1,b)": ["q2", "b", "R"],
+    "(q1,⊔)": ["q_reject", "⊔", "R"],
+    
+    "(q2,b)": ["q2", "b", "R"],
+    "(q2,a)": ["q_reject", "a", "R"],
+    "(q2,⊔)": ["q_accept", "⊔", "R"]
+  }
+}

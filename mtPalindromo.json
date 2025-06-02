@@ -1,0 +1,32 @@
+{
+  "description" : "Máquina de Turing que aceita cadeias palíndromas sobre {a, b}",
+  "K": ["q0", "q1", "q2", "q3", "q_accept", "q_reject"],
+  "Gamma": ["a", "b", "⊔", "⊳", "X", "Y"],
+  "branco": "⊔",
+  "s": "q0",
+  "H": ["q_accept", "q_reject"],
+  "delta": {
+    "(q0,⊳)": ["q0", "⊳", "R"],
+    "(q0,a)": ["q1", "X", "R"],
+    "(q0,b)": ["q1", "Y", "R"],
+    "(q0,X)": ["q_accept", "X", "R"],
+    "(q0,Y)": ["q_accept", "Y", "R"],
+    "(q0,⊔)": ["q_accept", "⊔", "R"],
+    
+    "(q1,a)": ["q1", "a", "R"],
+    "(q1,b)": ["q1", "b", "R"],
+    "(q1,X)": ["q2", "X", "L"],
+    "(q1,Y)": ["q2", "Y", "L"],
+    "(q1,⊔)": ["q2", "⊔", "L"],
+    
+    "(q2,a)": ["q3", "X", "L"],
+    "(q2,b)": ["q3", "Y", "L"],
+    "(q2,X)": ["q_accept", "X", "R"],
+    "(q2,Y)": ["q_accept", "Y", "R"],
+    
+    "(q3,a)": ["q3", "a", "L"],
+    "(q3,b)": ["q3", "b", "L"],
+    "(q3,X)": ["q0", "X", "R"],
+    "(q3,Y)": ["q0", "Y", "R"]
+  }
+}
